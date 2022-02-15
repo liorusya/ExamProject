@@ -1,0 +1,12 @@
+# Default ignored files
+/shelf/
+.idea
+.idea/workspace.xml
+target/generated-test-sources/
+target/test-classes
+target/site
+*.log
+*.iml
+*.ipr
+*.iws
+.allure
