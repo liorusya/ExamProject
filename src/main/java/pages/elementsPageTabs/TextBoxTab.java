@@ -94,6 +94,12 @@ public class TextBoxTab extends ParentPage {
         return this;
     }
 
+    public TextBoxTab clickSubmitButtonWithScrollDown() {
+        scrollDownUntilElementDisplayed(submitButton);
+        clickOnElement(submitButton);
+        return this;
+    }
+
     public TextBoxTab checkIsFullNameSaved(String fullName) {
         isElementDisplayed(fullNameSaved);
         Assert.assertEquals("FullName was not saved", "Name:" + fullName, fullNameSaved.getText());
@@ -118,7 +124,8 @@ public class TextBoxTab extends ParentPage {
         return this;
     }
 
-    public TextBoxTab checkIsAllDataSavedCorrectly(String fullName, String email, String currentAddress, String permanentAddress) {
+    public TextBoxTab checkIsAllDataSavedCorrectly(String fullName, String email,
+                                                   String currentAddress, String permanentAddress) {
         checkIsFullNameSaved(fullName);
         checkIsEmailSaved(email);
         checkIsCurrentAddressSaved(currentAddress);

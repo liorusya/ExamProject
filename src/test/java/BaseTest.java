@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import pages.ElementsPage;
+import pages.FormsPage;
 import pages.HomePage;
 import pages.elementsPageTabs.TextBoxTab;
 
@@ -22,6 +23,7 @@ public class BaseTest {
     protected HomePage homePage;
     protected ElementsPage elementsPage;
     protected TextBoxTab textBoxTab;
+    protected FormsPage formsPage;
 
     @Before
     public void setUp() {
@@ -35,6 +37,7 @@ public class BaseTest {
         homePage = new HomePage(webDriver);
         elementsPage = new ElementsPage(webDriver);
         textBoxTab = new TextBoxTab(webDriver);
+        formsPage = new FormsPage(webDriver);
 
     }
 
