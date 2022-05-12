@@ -15,8 +15,8 @@ public class FilliNTheElementsTextBoxTabTest extends BaseTest {
         homePage
                 .clickOnElementsCardToOpenElementsPage();
         elementsPage
-                .checkIsRedirectedToTheElementsPage()
-                .closeBannerOnThePage();
+                .checkIsRedirectedToTheElementsPage();
+        // .closeBannerOnThePage();
         textBoxTab
                 .openTheTexBoxTab()
                 .checkIsRedirectToTextBoxTab()
@@ -24,7 +24,7 @@ public class FilliNTheElementsTextBoxTabTest extends BaseTest {
                 .enterEmailInTheField(email)
                 .enterCurrentAddress(currentAddress)
                 .enterPermanentAddress(permanentAddress)
-                .clickSubmitButton()
+                .clickSubmitButtonWithScrollDown()
                 .checkIsAllDataSavedCorrectly(fullName, email, currentAddress, permanentAddress);
     }
 }

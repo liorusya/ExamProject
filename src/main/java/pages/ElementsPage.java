@@ -12,7 +12,8 @@ public class ElementsPage extends ParentPage {
     @Name("Elements Title")
     private WebElement elementsTitle;
 
-    @FindBy(xpath = ".//*[@title='Ad.Plus Advertising']")
+    @FindBy(xpath = ".//*[@id='close-fixedban']")
+    // .//*[@id='close-fixedban']  .//*[@title='Ad.Plus Advertising']
     private WebElement bannerOnTheBottom;
 
     public ElementsPage(WebDriver webDriver) {
@@ -34,6 +35,8 @@ public class ElementsPage extends ParentPage {
 
     public void closeBannerOnThePage() {
         clickOnElement(bannerOnTheBottom);
+        Assert.assertFalse("Banner is displayed",
+                isElementDisplayed(bannerOnTheBottom));
 
     }
 

@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -20,8 +21,10 @@ abstract public class ParentPage {
     Logger logger = Logger.getLogger(getClass());
     WebDriver webDriver;
     WebDriverWait webDriverWait10, webDriverWait15;
-    JavascriptExecutor js = (JavascriptExecutor) webDriver;
     protected String baseUrl = "https://demoqa.com";
+
+    @FindBy(xpath = ".//*[@title='Ad.Plus Advertising']")
+    private WebElement bannerOnTheBottom;
 
     public ParentPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -39,7 +42,6 @@ abstract public class ParentPage {
         Assert.assertEquals("Invalid page"
                 , baseUrl + getRelativeUrl()
                 , webDriver.getCurrentUrl());
-
     }
 
     protected void checkUrlWithPattern() {
@@ -123,11 +125,18 @@ abstract public class ParentPage {
     //scroll down to an element in Selenium until it will be visible????null
     protected void scrollDownUntilElementDisplayed(WebElement webElement) {
         try {
+            JavascriptExecutor js = (JavascriptExecutor) webDriver;
             js.executeScript("arguments[0].scrollIntoView();", webElement);
+            //  WebDriverWait webDriverWait10 = this.webDriverWait10;
             logger.info("Scrolled down to the element " + webElement);
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
+    }
+
+    protected void closeBannerOnThePage() {
+        clickOnElement(bannerOnTheBottom);
+
     }
 
 }
