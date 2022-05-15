@@ -1,4 +1,14 @@
+package ExamTests;
+
+import BaseTest.BaseTest;
+import junitparams.JUnitParamsRunner;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import suits.TestSuit1;
+
+@RunWith(JUnitParamsRunner.class)
+@Category(TestSuit1.class)
 
 public class FillInTheStudentRegistrationFormTest extends BaseTest {
 
@@ -8,7 +18,7 @@ public class FillInTheStudentRegistrationFormTest extends BaseTest {
         final String firstName = "Sherlock";
         final String lastName = "Holmes";
         final String email = "sherlock@testmail.com";
-        final String userPhoneN ="1234567895";
+        final String userPhoneN = "1234567895";
         final String dateOfBirth = "04 Mar 1995";
 
         homePage.openHomePage();
