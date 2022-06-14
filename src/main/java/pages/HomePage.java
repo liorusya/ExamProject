@@ -15,6 +15,8 @@ public class HomePage extends ParentPage {
 
     @FindBy(xpath = ".//*[@id='app']//div[2]//div[2]/div/div[1]")
     private WebElement formsCard;
+    @FindBy(xpath = ".//*[@id='app']//div[2]//div[3]/div/div[1]")
+    private WebElement alertCard;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
@@ -43,6 +45,11 @@ public class HomePage extends ParentPage {
 
     public void clickOnFormsCardToOpenTheFormsPage() {
         clickOnElement(formsCard);
+    }
+
+    public void clickOnAlertsCardToOpenTheAlertPage() {
+
+        clickOnElement(alertCard);
     }
 
 
