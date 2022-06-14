@@ -1,3 +1,5 @@
+package BaseTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.junit.After;
@@ -8,10 +10,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import pages.AlertsPage;
 import pages.ElementsPage;
 import pages.FormsPage;
 import pages.HomePage;
+import pages.alertsPageTabs.AlertsTab;
+import pages.elementsPageTabs.RadioButtonTab;
 import pages.elementsPageTabs.TextBoxTab;
+import pages.elementsPageTabs.WebTablesTab;
 
 import java.util.concurrent.TimeUnit;
 
@@ -24,6 +30,10 @@ public class BaseTest {
     protected ElementsPage elementsPage;
     protected TextBoxTab textBoxTab;
     protected FormsPage formsPage;
+    protected WebTablesTab webTablesTab;
+    protected RadioButtonTab radioButtonTab;
+    protected AlertsPage alertsPage;
+    protected AlertsTab alertsTab;
 
     @Before
     public void setUp() {
@@ -38,6 +48,10 @@ public class BaseTest {
         elementsPage = new ElementsPage(webDriver);
         textBoxTab = new TextBoxTab(webDriver);
         formsPage = new FormsPage(webDriver);
+        webTablesTab = new WebTablesTab(webDriver);
+        radioButtonTab = new RadioButtonTab(webDriver);
+        alertsPage =new AlertsPage(webDriver);
+        alertsTab = new AlertsTab(webDriver);
 
     }
 

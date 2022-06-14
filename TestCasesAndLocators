@@ -79,20 +79,42 @@ Verify if the user was added in to the Webtable of the Elements Tab.
  9 Click  button 'Submit'
 
  EXPECTED RESULT: The new user is displayed in the table
- The following filds filled in correctly:
+ The following fields filled in correctly:
   First Name, Last Name, Email, Age, Salary,  are correct
  TC (06) 10  Search the new user
-  11 Set Sherlock in to the Search fild
+  11 Set Sherlock in to the Search field
  EXPECTED RESULT: The new user is displayed in the table
 
 
  ---Test case 04
+   Check the "Yes" radio button was clicked
+   Elements--> Buttons
+   PRECONDITIONS:
+    The app is opened.
+    The page Elements is opened
+    1 Click Radio Button item of the Elements menu
+    2 Click the radiobutton "Yes"
+    EXPECTED RESULT: the message -You have selected " Yes" displayed
+
+ --- Test case 05
+ Verify if the alert was confirmed
+ Alerts --> confirm alert
+ PRECONDITIONS:
+     The app is opened.
+     The page Alerts&Frames is opened
+     1 Click the Alerts item of the Alerts&Frames menu
+     2 Click the "Click me button near the "On button click, confirm box will appear"
+     3 Accept the alert
+     EXPECTED RESULT: the message "You selected Ok" displayed
+
+
+---Test case
   Widgets -> autocomplete, slider
   Verify if the user can select / deselect the color names in the 'Type multiple color names' field
   PRECONDITIONS:
  The app is opened.
  The page Widgets is opened
- 1 Click Auto Complite in the menu
+ 1 Click Auto Complete in the menu
  2 Set  letter 'N' in to the 'Type multiple color names' field
  3 Select 'Indigo' from the list
  4 Set  letter 'R' in to the 'Type multiple color names' field
@@ -102,7 +124,7 @@ Verify if the user was added in to the Webtable of the Elements Tab.
   6 Click the x icon of the 'Indigo' to delete the color from the field.
   EXPECTED RESULT:  the color 'Indigo'  in not displayed in the filed.
 
-  Test case 05
+  Test case
 
   Verify if the toolTips are shown
    // Widgets page - tooltips

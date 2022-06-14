@@ -1,5 +1,14 @@
-import org.junit.Test;
+package ExamTests;
 
+import BaseTest.BaseTest;
+import junitparams.JUnitParamsRunner;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import suits.TestSuit1;
+
+@RunWith(JUnitParamsRunner.class)
+@Category(TestSuit1.class)
 
 public class FilliNTheElementsTextBoxTabTest extends BaseTest {
     final String fullName = "Test User";
